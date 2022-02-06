@@ -1,0 +1,28 @@
+{
+  "name": "agency",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "latest",
+    "cors": "^2.8.5",
+    "dotenv": "^8.0.0",
+    "errorhandler": "^1.5.1",
+    "express": "latest",
+    "helmet": "^3.21.2",
+    "http-server": "^0.11.1",
+    "mongoose": "^5.9.17"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "files/*"
+    ]
+  }
+}

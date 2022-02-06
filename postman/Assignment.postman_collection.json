@@ -1,0 +1,107 @@
+{
+	"info": {
+		"_postman_id": "4a938da1-52d9-4485-8448-faae81ca503d",
+		"name": "Assignment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create Agency with Clients",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"name\",\n    \"address1\": \"address1\",\n    \"address2\": \"address2\",\n    \"state\": \"state\",\n    \"city\": \"city\",\n    \"phone\": \"+910000000000\",\n    \"clients\": [\n        {\n            \"name\": \"name\",\n            \"email\": \"email\",\n            \"phone\": \"phone\",\n            \"totalBill\": 100\n        },\n        {\n            \"name\": \"name\",\n            \"email\": \"email\",\n            \"phone\": \"phone\",\n            \"totalBill\": 300\n        },\n        {\n            \"name\": \"name\",\n            \"email\": \"email\",\n            \"phone\": \"phone\",\n            \"totalBill\": 200\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/agency",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"agency"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Client by ID",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"_id\":\"61ffaa2d032c8c40e4150d95\",\n    \"name\": \"name12345\",\n    \"email\": \"email\",\n    \"phone\": \"phone\",\n    \"totalBill\": 10\n}"
+				},
+				"url": {
+					"raw": "{{host}}/client",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"client"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Agency with Max Billed client",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/agency/with_top_client/61ffaa2e032c8c40e4150d98",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"agency",
+						"with_top_client",
+						"61ffaa2e032c8c40e4150d98"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "http://localhost:3000",
+			"type": "string"
+		}
+	]
+}
